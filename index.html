@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Material Upgrade Planner - Hay Day</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="container hstack">
+    <h1 class="title">Upgrade Tool - Hay Day</h1>
+    <h3>This tool will calculate the number of tools required to upgrade from the current capacity to the next capacity.</h3>
+    <div class="space"></div>
+    <div class="seg" role="tablist" aria-label="Mode">
+      <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
+      <button id="tab-silo" role="tab" aria-pressed="false" data-mode="silo">SILO</button>
+      <button id="tab-expansion" role="tab" aria-pressed="false" data-mode="expansion">EXPANSION</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Tools</h2>
+    <div class="hint" id="hint-mode">Barn: Bolt, Plank, Duct Tape.</div>
+
+    <div class="grid" style="margin-top:12px">
+      <div class="label" id="lbl-target">Target Capacity</div>
+      <input id="target" type="number" placeholder="e.g., 1000 or 1050" />
+      <div class="label" id="lbl-a">Bolt</div>
+      <input id="t0" type="number" placeholder="Enter initial stock to perform distribution" />
+      <div class="label" id="lbl-b">Plank</div>
+      <input id="t1" type="number" placeholder="Enter initial stock to perform distribution" />
+      <div class="label" id="lbl-c">Duct Tape</div>
+      <input id="t2" type="number" placeholder="Enter initial stock to perform distribution" />
+    </div>
+
+    <div class="toolbar">
+      <button class="btn primary" id="btn-calc">Calculate</button>
+      <button class="btn ghost" id="btn-clear" title="Clear all fields">Clear</button>
+      <button class="btn ghost" id="btn-preset" title="Quick example">Preset</button>
+    </div>
+
+    <div id="msg" class="msg" aria-live="polite"></div>
+
+    <div class="kpi" id="kpi" style="display:none">
+      <span class="chip">Per-tool target: <span class="mono" id="kpi-needEach">–</span></span>
+      <span class="chip">Shortfall A: <span class="mono" id="kpi-a">–</span></span>
+      <span class="chip">Shortfall B: <span class="mono" id="kpi-b">–</span></span>
+      <span class="chip">Shortfall C: <span class="mono" id="kpi-c">–</span></span>
+      <span class="chip ok" id="kpi-rule1">Balanced ✓</span>
+      <span class="chip ok" id="kpi-rule2">≤ 89/day ✓</span>
+    </div>
+  </section>
+
+  <section id="out" class="card" style="display:none">
+    <h2>Distribution Plan</h2>
+    <div class="hint">Daily distribution slots + daily tracking. End-of-day counts are exactly equal.</div>
+    <div id="days"></div>
+    <div class="foot">Policy guard: if any initial stock field is blank, no distribution is executed; only per-tool requirements are shown.</div>
+  </section>
+</main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
