@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Material Upgrade Planner - Hay Day</title>
 
-  <link rel="stylesheet" href="styles.css" />
+
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header>
   <div class="container hstack">
     <h1 class="title">Upgrade Tool - Hay Day</h1>
-    <h3>This tool will calculate the number of tools required to upgrade from the current capacity to the next capacity.</h3>
+    <h3>This tool helps you calculate the number of tools required to upgrade from the current capacity to the next capacity.</h3>
     <div class="space"></div>
     <div class="seg" role="tablist" aria-label="Mode">
       <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
@@ -30,11 +31,11 @@
       <div class="label" id="lbl-target">Target Capacity</div>
       <input id="target" type="number" placeholder="e.g., 1000 or 1050" />
       <div class="label" id="lbl-a">Bolt</div>
-      <input id="t0" type="number" placeholder="Enter initial stock to perform distribution" />
+      <input id="t0" type="number" placeholder="enter the initial stock to perform distribution" />
       <div class="label" id="lbl-b">Plank</div>
-      <input id="t1" type="number" placeholder="Enter initial stock to perform distribution" />
+      <input id="t1" type="number" placeholder="enter the initial stock to perform distribution" />
       <div class="label" id="lbl-c">Duct Tape</div>
-      <input id="t2" type="number" placeholder="Enter initial stock to perform distribution" />
+      <input id="t2" type="number" placeholder="enter the initial stock to perform distribution" />
     </div>
 
     <div class="toolbar">
@@ -47,9 +48,9 @@
 
     <div class="kpi" id="kpi" style="display:none">
       <span class="chip">Per-tool target: <span class="mono" id="kpi-needEach">–</span></span>
-      <span class="chip">Shortfall A: <span class="mono" id="kpi-a">–</span></span>
-      <span class="chip">Shortfall B: <span class="mono" id="kpi-b">–</span></span>
-      <span class="chip">Shortfall C: <span class="mono" id="kpi-c">–</span></span>
+      <span class="chip"><span class="mono" id="kpi-a">–</span></span>
+      <span class="chip"><span class="mono" id="kpi-b">–</span></span>
+      <span class="chip"><span class="mono" id="kpi-c">–</span></span>
       <span class="chip ok" id="kpi-rule1">Balanced ✓</span>
       <span class="chip ok" id="kpi-rule2">≤ 89/day ✓</span>
     </div>
@@ -64,6 +65,11 @@
 </main>
 
 
-  <script src="script.js"></script>
+
+<footer class="foot" style="text-align:center;">
+  © Copyright 2025 | Black Production®. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
