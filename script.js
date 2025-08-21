@@ -113,13 +113,13 @@ function renderDayNode(node, names){
   <details ${node.day===1?'open':''}>
     <summary>Day ${node.day}<span class="badge">Used: ${node.used}/89</span><span class="badge">End total: ${node.after[0]} each</span></summary>
     <div style="margin-top:8px">
-      <div class="subtle">📦 Distribution Slots</div>
+      <div class="subtle">Distribution Slots</div>
       <table><thead><tr><th>Slot</th><th>Tool</th><th>Amount</th></tr></thead>
         <tbody>${slots || `<tr><td colspan="3">No distribution</td></tr>`}</tbody>
         <tfoot><tr><th colspan="2">TOTAL</th><th>${node.used}</th></tr></tfoot>
       </table>
 
-      <div class="subtle" style="margin-top:6px">📊 Daily Tracking (Balanced end-of-day)</div>
+      <div class="subtle" style="margin-top:6px">Daily Tracking (Balanced end-of-day)</div>
       <table>
         <thead><tr><th>Tool</th><th>Start</th><th>Added</th><th>Total</th><th>Remaining</th><th>Target</th><th>Check</th></tr></thead>
         <tbody>${track}</tbody>
