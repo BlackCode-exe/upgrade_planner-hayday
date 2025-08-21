@@ -15,7 +15,7 @@ function reqFromCapacity(cap){
   return null;
 }
 
-/* ===== Distribution day ===== */
+/* ===== Distribution day  ===== */
 function dayRaiseBalanced(cur, targetEach, cap=89){
   const n = cur.length;
   const deficit = cur.reduce((s,v)=>s+Math.max(0,targetEach-v),0);
@@ -134,21 +134,24 @@ function calculate(){
   let perTool;
   if(mode==='expansion'){
     perTool = targetRaw; // direct
-    if(!(perTool>0)){ el('msg').textContent='Invalid! Please enter the quantity to perform.'; el('msg').className='msg err'; return; }
+    if(!(perTool>0)){ el('msg').textContent='Invalid! Please enter the field to perform.'; el('msg').className='msg err'; return; }
   } else {
     perTool = reqFromCapacity(targetRaw);
-    if(perTool===null){ el('msg').textContent='Invalid! Please enter the quantity to perform.'; el('msg').className='msg err'; return; }
+    if(perTool===null){ el('msg').textContent='Invalid! Please enter the field to perform.'; el('msg').className='msg err'; return; }
   }
 
   const a = readNum(ids.a), b = readNum(ids.b), c = readNum(ids.c);
   const missing = [a,b,c].some(v => v===null);
 
-  // KPI header
+  // KPI header with tool names
+  const [nameA, nameB, nameC] = TOOLSETS[mode];
   const shortA = missing ? '—' : Math.max(0, perTool - a);
   const shortB = missing ? '—' : Math.max(0, perTool - b);
   const shortC = missing ? '—' : Math.max(0, perTool - c);
   el('kpi-needEach').textContent = perTool;
-  el('kpi-a').textContent = shortA; el('kpi-b').textContent = shortB; el('kpi-c').textContent = shortC;
+  el('kpi-a').textContent = `${nameA}: ${shortA}`;
+  el('kpi-b').textContent = `${nameB}: ${shortB}`;
+  el('kpi-c').textContent = `${nameC}: ${shortC}`;
   el('kpi-rule1').style.display='inline-block'; el('kpi-rule2').style.display='inline-block';
   el('kpi').style.display='flex';
 
@@ -156,7 +159,7 @@ function calculate(){
   if (missing){
     el('out').style.display='none';
     if(mode==='expansion'){
-      el('msg').textContent = `Initial stock missing. Each tool requires ${perTool}. Enter the initial stock to perform a distribution plan.`;
+      el('msg').textContent = `Each tool requires ${perTool}. Enter the initial stock to perform a distribution plan.`;
     } else {
       el('msg').textContent = `Each tool requires ${perTool}. Enter the initial stock to perform a distribution plan.`;
     }
@@ -169,7 +172,7 @@ function calculate(){
   const days = plan.map(p => renderDayNode(p, names)).join('');
   el('days').innerHTML = days;
   el('out').style.display='block';
-  el('msg').textContent = `Plan generated in ${plan.length} day(s), balanced daily.`;
+  el('msg').textContent = `Plan generated in ${plan.length} day(s). Balanced daily.`;
   el('msg').className='msg';
 }
 
@@ -184,3 +187,8 @@ document.addEventListener('keydown', e=>{
   }
 });
 setMode('barn'); // init
+
+/* ===== Last but not least ===== */
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
