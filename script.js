@@ -143,17 +143,24 @@ function calculate(){
   const a = readNum(ids.a), b = readNum(ids.b), c = readNum(ids.c);
   const missing = [a,b,c].some(v => v===null);
 
-  // KPI header with tool names
-  const [nameA, nameB, nameC] = TOOLSETS[mode];
-  const shortA = missing ? '—' : Math.max(0, perTool - a);
-  const shortB = missing ? '—' : Math.max(0, perTool - b);
-  const shortC = missing ? '—' : Math.max(0, perTool - c);
-  el('kpi-needEach').textContent = perTool;
-  el('kpi-a').textContent = `${nameA}: ${shortA}`;
-  el('kpi-b').textContent = `${nameB}: ${shortB}`;
-  el('kpi-c').textContent = `${nameC}: ${shortC}`;
-  el('kpi-rule1').style.display='inline-block'; el('kpi-rule2').style.display='inline-block';
-  el('kpi').style.display='flex';
+ // KPI header with tool names
+const [nameA, nameB, nameC] = TOOLSETS[mode];
+el('kpi-needEach').textContent = perTool;   
+el('kpi').style.display = 'flex';
+
+if (!missing) {
+  el('kpi-a').textContent = `${nameA}: ${Math.max(0, perTool - a)}`;
+  el('kpi-b').textContent = `${nameB}: ${Math.max(0, perTool - b)}`;
+  el('kpi-c').textContent = `${nameC}: ${Math.max(0, perTool - c)}`;
+  el('kpi-rule1').style.display = 'inline-block';
+  el('kpi-rule2').style.display = 'inline-block';
+} else {
+  el('kpi-a').textContent = '';
+  el('kpi-b').textContent = '';
+  el('kpi-c').textContent = '';
+  el('kpi-rule1').style.display = 'none';
+  el('kpi-rule2').style.display = 'none';
+}
 
   // Missing-stock policy
   if (missing){
