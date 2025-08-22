@@ -10,8 +10,10 @@
 <body>
 <header>
   <div class="container hstack">
-    <h1 class="title">Upgrade Tool - Hay Day</h1>
-    <h3>Plan and calculate the items required for your next capacity upgrade.</h3>
+<h1>
+  Upgrade Tool - Hay Day
+  <span class="subtitle">Plan and calculate the items required for your next capacity upgrade.</span>
+</h1>
     <div class="space"></div>
     <div class="seg" role="tablist" aria-label="Mode">
       <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
@@ -29,7 +31,7 @@
     <div class="grid" style="margin-top:12px">
       <div class="label" id="lbl-target">Target Capacity</div>
       <input id="target" type="number" placeholder="e.g., 1000 or 1050" />
-      <label class="section-label">Initial Stock:</label>
+      <div class="label" style="grid-column:1 / -1; margin-top:8px;">Initial Stock:</div>
       <div class="label" id="lbl-a">Bolt</div>
       <input id="t0" type="number" placeholder="enter the field to perform distribution" />
       <div class="label" id="lbl-b">Plank</div>
@@ -65,12 +67,14 @@
 </main>
 
 <footer class="foot" style="text-align:center;">
-  <img src="assets/logo.png" alt="Black Code Logo" class="footer-logo">
-
+  <footer>
+  <img src="assets/logo.png" alt="logo" class="footer-logo">
   <p>
     © 2025 Black Production®, All rights reserved. | 
     <span class="version">v.1.2</span>
   </p>
+  </div>
+</footer>
 </footer>
 
 <script src="script.js"></script>
