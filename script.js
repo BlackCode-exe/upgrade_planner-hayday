@@ -132,8 +132,12 @@ function allProvided(){ return ![ids.a,ids.b,ids.c].some(id=>isBlank(el(id).valu
 
 function setMode(newMode){
   mode = newMode;
+
   // tabs
-  ["barn","silo","expansion"].forEach(m => el(`tab-${m}`).setAttribute("aria-pressed", String(m===mode)));
+  ["barn","silo","expansion"].forEach(m =>
+    el(`tab-${m}`).setAttribute("aria-pressed", String(m===mode))
+  );
+
   // labels
   const [A,B,C] = TOOLSETS[mode];
   el('lbl-a').textContent = A; el('lbl-b').textContent = B; el('lbl-c').textContent = C;
@@ -141,11 +145,23 @@ function setMode(newMode){
     mode==='barn' ? 'Barn: Bolt, Plank, Duct Tape.' :
     mode==='silo' ? 'Silo: Nail, Screw, Wood Panel.' :
                     'Expansion: Land Deed, Mallet, Marker Stake.';
+
   // target label & placeholder
-  if(mode==='expansion'){ el('lbl-target').textContent='Target tool'; el('target').placeholder='e.g., 65'; }
-  else{ el('lbl-target').textContent='Target Capacity'; el('target').placeholder='e.g., 1000 or 1050'; }
+  if (mode==='expansion'){
+    el('lbl-target').textContent='Target tool';
+    el('target').placeholder='e.g., 45';
+  } else {
+    el('lbl-target').textContent='Target Capacity';
+    el('target').placeholder='e.g., 2750';
+  }
+
+  // === Auto-clear inputs on mode change ===
+  [ids.target, ids.a, ids.b, ids.c].forEach(id => el(id).value = '');
+
   // clear outputs
-  el('out').style.display='none'; el('kpi').style.display='none'; el('msg').textContent='';
+  el('out').style.display='none';
+  el('kpi').style.display='none';
+  el('msg').textContent='';
 }
 ['barn','silo','expansion'].forEach(m => el(`tab-${m}`).addEventListener('click', ()=>setMode(m)));
 
@@ -153,10 +169,21 @@ function clearAll(){
   [ids.target, ids.a, ids.b, ids.c].forEach(id => el(id).value = '');
   el('out').style.display='none'; el('kpi').style.display='none'; el('msg').textContent='';
 }
+
 function preset(){
-  // small friendly demo
-  if(mode!=='expansion'){ el(ids.target).value = 1000; } else { el(ids.target).value = 65; }
-  el(ids.a).value = 3; el(ids.b).value = 5; el(ids.c).value = 4;
+  if (mode !== 'expansion') {
+    // Barn / Silo preset
+    el(ids.target).value = 2750;
+    el(ids.a).value = 9;
+    el(ids.b).value = 12;
+    el(ids.c).value = 25;
+  } else {
+    // Expansion preset
+    el(ids.target).value = 45;
+    el(ids.a).value = 14;
+    el(ids.b).value = 6;
+    el(ids.c).value = 10;
+  }
 }
 
 function renderDayNode(node, names){
@@ -237,11 +264,11 @@ if (missing) {
   if (mode === 'expansion') {
     el('msg').innerHTML =
   `Each tool requires <b>${perTool} items</b> to unlock the land.` +
-  `<div style="color:green;">Enter the initial stock to perform distribution.</div>`;
+  `<div style="color:yellow;">Enter the initial stock to perform distribution.</div>`;
   } else {
     el('msg').innerHTML =
   `Each tool requires <b>${perTool} items to upgrade from capacity ${currentCapacity}.</b>` +
-  `<div style="color:green;">Enter the initial stock to perform distribution.</div>`;
+  `<div style="color:yellow;">Enter the initial stock to perform distribution.</div>`;
   }
   el('msg').className = 'msg';
   return;
