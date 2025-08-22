@@ -66,6 +66,7 @@
   .kpi{
     display:flex; gap:8px; flex-wrap:wrap; margin-top:10px
   }
+.kpi .chip:has(.mono:empty) { display: none; }
   .chip{
     background:var(--chip); border:1px solid var(--chip-line); color:var(--ink);
     padding:8px 10px; border-radius:999px; font-weight:700
