@@ -51,6 +51,11 @@
   .grid{display:grid; grid-template-columns:240px 1fr; gap:12px; align-items:center}
   @media (max-width:720px){ .grid{grid-template-columns:1fr} }
   .label{font-weight:700}
+  .section-label {
+    font-weight: bold;
+    display: block;     
+    margin-top: 12px;
+    margin-bottom: 4px;}
   input[type=number]{
     width:100%; padding:12px 12px; color:var(--ink);
     background:var(--elev); border:1px solid var(--line); border-radius:12px; outline:none;
