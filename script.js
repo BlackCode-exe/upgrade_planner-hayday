@@ -113,13 +113,13 @@ function renderDayNode(node, names){
   <details ${node.day===1?'open':''}>
     <summary>Day ${node.day}<span class="badge">Used: ${node.used}/89</span><span class="badge">End total: ${node.after[0]} each</span></summary>
     <div style="margin-top:8px">
-      <div class="subtle">Distribution Slots</div>
+      <div class="subtle">📦 Distribution Slots</div>
       <table><thead><tr><th>Slot</th><th>Tool</th><th>Amount</th></tr></thead>
         <tbody>${slots || `<tr><td colspan="3">No distribution</td></tr>`}</tbody>
         <tfoot><tr><th colspan="2">TOTAL</th><th>${node.used}</th></tr></tfoot>
       </table>
 
-      <div class="subtle" style="margin-top:6px">Daily Tracking (Balanced end-of-day)</div>
+      <div class="subtle" style="margin-top:6px">📊 Daily Tracking (Balanced end-of-day)</div>
       <table>
         <thead><tr><th>Tool</th><th>Start</th><th>Added</th><th>Total</th><th>Remaining</th><th>Target</th><th>Check</th></tr></thead>
         <tbody>${track}</tbody>
@@ -162,16 +162,27 @@ if (!missing) {
   el('kpi-rule2').style.display = 'none';
 }
 
-  // Missing-stock policy
-  if (missing){
-    el('out').style.display='none';
-    if(mode==='expansion'){
-      el('msg').textContent = `Each tool requires ${perTool}. Enter the initial stock to perform a distribution plan.`;
-    } else {
-      el('msg').textContent = `Each tool requires ${perTool}. Enter the initial stock to perform a distribution plan.`;
-    }
-    el('msg').className='msg';
-    return;
+  // derive the "current capacity" (previous tier) from the entered target capacity
+let currentCapacity = null;
+if (mode !== 'expansion') {
+  const step = (targetRaw <= 1000) ? 25 : 50;
+  currentCapacity = targetRaw - step;
+}
+
+// Missing-stock policy
+if (missing) {
+  el('out').style.display = 'none';
+  if (mode === 'expansion') {
+    el('msg').innerHTML =
+  `Each tool requires <b>${perTool} tools</b> to unlock the land.` +
+  `<div style="color:green;">Enter the initial stock to perform distribution.</div>`;
+  } else {
+    el('msg').innerHTML =
+  `Each tool requires <b>${perTool} tools to upgrade from capacity ${currentCapacity}.</b>` +
+  `<div style="color:green;">Enter the initial stock to perform distribution.</div>`;
+  }
+  el('msg').className = 'msg';
+  return;
   }
 
   // Build and render plan
