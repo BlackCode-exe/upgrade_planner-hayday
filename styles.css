@@ -25,6 +25,7 @@
   .title{font-weight:800; letter-spacing:.2px; margin:0}
   .hstack h3{font-weight: 350; margin: 0;}
   .subtle{color:var(--muted)}
+
   /* ===== Segmented control ===== */
   .seg{
     display:inline-grid; grid-auto-flow:column; gap:6px; padding:6px;
@@ -37,6 +38,7 @@
   .seg button[aria-pressed="true"]{
     color:#0a0d13; background:linear-gradient(180deg,#bfe0ff 0%, #6ab0ff 100%);
   }
+
   /* ===== Card ===== */
   .card{
     background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
@@ -44,6 +46,7 @@
   }
   .card h2{margin:0 0 8px 0; font-weight:800}
   .hint{color:var(--muted); font-size:13px}
+
   /* ===== Form ===== */
   .grid{display:grid; grid-template-columns:240px 1fr; gap:12px; align-items:center}
   @media (max-width:720px){ .grid{grid-template-columns:1fr} }
@@ -76,12 +79,13 @@
   .chip.err{border-color:#6b1f2a; color:var(--err)}
   .msg{margin-top:8px; color:var(--muted)}
   .msg.err{color:var(--err)}
+
   /* ===== Table ===== */
   table{width:100%; border-collapse:collapse; margin-top:10px}
   th,td{border:1px solid var(--line); padding:10px; text-align:center}
   th{background:#0f1422; font-weight:800}
   tfoot th{background:#0f1320}
-  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
   /* ===== Accordion for days ===== */
   details{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 10px; margin-top:10px}
   summary{cursor:pointer; font-weight:800}
