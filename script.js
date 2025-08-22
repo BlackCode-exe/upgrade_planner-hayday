@@ -16,39 +16,101 @@ function reqFromCapacity(cap){
 }
 
 /* ===== Distribution day  ===== */
-function dayRaiseBalanced(cur, targetEach, cap=89){
+function dayRaiseBalanced(cur, targetEach, cap = 89){
+  // Enforce hard daily cap and never exceed target ceilings.
   const n = cur.length;
-  const deficit = cur.reduce((s,v)=>s+Math.max(0,targetEach-v),0);
-  if (deficit===0) return {adds:[0,0,0],used:0,after:cur.slice(),slots:[]};
-  const budget = Math.min(cap, deficit);
+  const sumDef = cur.reduce((s,v)=> s + Math.max(0, targetEach - v), 0);
+  if (sumDef === 0) return {adds:[0,0,0], used:0, after:cur.slice(), slots:[]};
 
-  const lo = Math.max(...cur), hi = targetEach;
-  let L=lo, R=hi, best=lo;
-  const need=(T)=>cur.reduce((s,v)=>s+Math.max(0,Math.min(T,targetEach)-v),0);
-  while(L<=R){
-    const mid = (L+R)>>1;
-    if (need(mid) <= budget){ best=mid; L=mid+1; } else { R=mid-1; }
-  }
-  const adds = cur.map(v=>Math.max(0,Math.min(best,targetEach)-v));
-  let used = adds.reduce((s,v)=>s+v,0);
-  let room = budget-used;
-  if(room>=n){
-    const extra = Math.min(Math.floor(room/n), targetEach-best);
-    if(extra>0){ for(let i=0;i<n;i++) adds[i]+=extra; used+=extra*n; }
-  }
-  const after = cur.map((v,i)=>v+adds[i]);
+  cap = Math.max(0, Math.min(cap, sumDef)); // NEVER exceed 89 or remaining deficit
 
-  // Build slots ≤10 each, round-robin
-  const names = TOOLSETS[mode]; const left=adds.slice(); const slots=[];
-  while(left.reduce((s,v)=>s+v,0)>0){
-    for(let i=0;i<n;i++){
-      if(left[i]>0){
-        const take = Math.min(10,left[i]); left[i]-=take;
+  const lo = Math.max(...cur);
+
+  // Units needed to end the day at common level T (no decreases)
+  const needToReach = (T) =>
+    cur.reduce((s,v)=> s + Math.max(0, Math.min(T, targetEach) - v), 0);
+
+  let adds = [0,0,0], used = 0, after = cur.slice();
+
+  // ===== Case A: We can equalize to some T >= lo within the cap =====
+  if (needToReach(lo) <= cap){
+    // Binary search the highest common level T we can afford today
+    let L = lo, R = targetEach, best = lo;
+    while (L <= R){
+      const mid = (L + R) >> 1;
+      if (needToReach(mid) <= cap){ best = mid; L = mid + 1; } else { R = mid - 1; }
+    }
+
+    adds = cur.map(v => Math.max(0, Math.min(best, targetEach) - v));
+    used = adds.reduce((s,v)=> s + v, 0);
+
+    // Spend any leftover only in multiples of n to keep totals equal
+    let room = cap - used;
+    const extra = Math.min(Math.floor(room / n), targetEach - best);
+    if (extra > 0){
+      for (let i=0;i<n;i++) adds[i] += extra;
+      used += extra * n;
+    }
+
+    after = cur.map((v,i)=> v + adds[i]);
+  } else {
+    // ===== Case B: Can't reach current max today — raise lower group equally as far as allowed =====
+    const lowerIdx = [...Array(n).keys()].filter(i => cur[i] < lo);
+    const m = lowerIdx.length;
+    const sumLower = lowerIdx.reduce((s,i)=> s + cur[i], 0);
+
+    // Highest equal level x for the lower group given cap:
+    // m*x - sumLower <= cap  ⇒  x <= floor((sumLower + cap)/m)
+    let x = Math.floor((sumLower + cap) / m);
+    x = Math.min(x, lo); // never surpass the current max
+
+    // Base raise to x (keeps lower tools exactly equal)
+    lowerIdx.forEach(i => { adds[i] = Math.max(0, x - cur[i]); });
+    used = adds.reduce((s,v)=> s + v, 0);
+
+    // Use leftover ONLY in multiples of m (lower-group size) without exceeding lo
+    let rem = cap - used;
+    if (rem >= m && x < lo){
+      const bump = Math.min(Math.floor(rem / m), lo - x);
+      if (bump > 0){
+        lowerIdx.forEach(i => adds[i] += bump);
+        used += bump * m;
+        x += bump;
+      }
+      // Any remainder < m is intentionally not used to preserve equality.
+    }
+
+    after = cur.map((v,i)=> v + adds[i]);
+  }
+
+  // Safety: clamp any accidental drift
+  used = Math.min(used, cap);
+  const sumAdds = adds.reduce((s,v)=>s+v,0);
+  if (sumAdds > cap){
+    // Proportional trim (stable, integer)
+    let over = sumAdds - cap;
+    for (let i=0; i<n && over>0; i++){
+      const cut = Math.min(over, adds[i]);
+      adds[i] -= cut; over -= cut;
+    }
+    after = cur.map((v,i)=> v + adds[i]);
+  }
+
+  // Build ≤10-per-slot distribution list, never altering totals
+  const names = TOOLSETS[mode];
+  const left = adds.slice();
+  const slots = [];
+  while (left.reduce((s,v)=> s + v, 0) > 0){
+    for (let i=0;i<n;i++){
+      if (left[i] > 0){
+        const take = Math.min(10, left[i]);
         slots.push({tool:names[i], amount:take});
+        left[i] -= take;
       }
     }
   }
-  return {adds,used,after,slots};
+
+  return {adds, used, after, slots};
 }
 function fullPlan(initial, targetEach){
   const steps=[]; let cur=initial.slice(); let day=1;
