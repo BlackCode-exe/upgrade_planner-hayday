@@ -1,5 +1,5 @@
 # Material Upgrade Planner – Hay Day  
-**Version:** 1.3.0  
+**Version:** 1.3.2  
 **Author:** Black Production®  
 
 ==============================  
