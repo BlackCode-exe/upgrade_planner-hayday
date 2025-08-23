@@ -72,7 +72,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ==============================  
 
-## v1.4.0 – Theme Toggle & UI Enhancements
+## v1.4.0 – Theme & UI Enhancements
 - Implemented light/dark mode with persistent preference storage.
 - Adapted tables, buttons, header, and footer to support both themes.  
 
