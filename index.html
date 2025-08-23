@@ -11,15 +11,21 @@
 <header>
   <div class="container hstack">
 <h1>
-  Material Upgrade Planner - Hay Day
+  Upgrade Tool - Hay Day
   <span class="subtitle">Plan and calculate the items required for your next capacity upgrade.</span>
 </h1>
     <div class="space"></div>
-    <div class="seg" role="tablist" aria-label="Mode">
-      <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
-      <button id="tab-silo" role="tab" aria-pressed="false" data-mode="silo">SILO</button>
-      <button id="tab-expansion" role="tab" aria-pressed="false" data-mode="expansion">EXPANSION</button>
-    </div>
+    <div class="seg-wrap">
+  <div class="seg" role="tablist" aria-label="Mode">
+    <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
+    <button id="tab-silo" role="tab" aria-pressed="false" data-mode="silo">SILO</button>
+    <button id="tab-expansion" role="tab" aria-pressed="false" data-mode="expansion">EXPANSION</button>
+  </div>
+
+  <button id="btn-theme" class="theme-toggle" title="Toggle Light/Dark" aria-label="Toggle theme">
+    <span class="icon">☀️</span>
+  </button>
+</div>
   </div>
 </header>
 
@@ -42,8 +48,8 @@
 
     <div class="toolbar">
       <button class="btn primary" id="btn-calc">Calculate</button>
-      <button class="btn ghost" id="btn-clear" title="Clear all fields">Clear</button>
-      <button class="btn ghost" id="btn-preset" title="Quick example">Preset</button>
+      <button class="btn primary" id="btn-clear" title="Clear all fields">Clear</button>
+      <button class="btn primary" id="btn-preset" title="Quick example">Preset</button>
     </div>
 
     <div id="msg" class="msg" aria-live="polite"></div>
@@ -67,14 +73,11 @@
 </main>
 
 <footer class="foot" style="text-align:center;">
-  <footer>
   <img src="assets/logo.png" alt="logo" class="footer-logo">
   <p>
-    © 2025 Black Production® All rights reserved. | 
-    <span class="version">v.1.3.2</span>
+    © 2025 Black Production®, All rights reserved. |
+    <span class="version">v1.4.0</span>
   </p>
-  </div>
-</footer>
 </footer>
 
 <script src="script.js"></script>

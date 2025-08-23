@@ -1,25 +1,78 @@
-/* ===== Theme ===== */
-  :root{
-    --bg:#0b0c0f; --surface:#111319; --elev:#171a21;
-    --ink:#ecedf1; --muted:#a8afbf; --line:#242938;
-    --brand:#5aa7ff; --brand-2:#9ed0ff;
-    --ok:#58d68d; --warn:#ffd166; --err:#ff6b6b;
-    --chip:#0f1320; --chip-line:#2b3550;
-    --radius:16px;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
-  }
+/* ===== THEME ===== */
+:root{
+  --bg:#f7f8fb;
+  --surface:#ffffff;
+  --elev:#f4f6fb;
+  --ink:#0b0c0f;
+  --muted:#5b6272;
+  --line:#e6e9f2;
+
+  --brand:#3f83f8;
+  --brand-2:#9ed0ff;
+
+  --ok:#1e9d68;
+  --warn:#b88600;
+  --err:#c23a3a;
+
+  --chip:#f6f8ff;
+  --chip-line:#d8def0;
+
+  --radius:16px;
+  --shadow: 0 12px 32px rgba(0,0,0,.12);
+--  bg-grad-1:#f8fafc;
+--  bg-grad-2:#eef2f7;
+}
+
+html.theme-dark{
+  --bg:#0b0c0f; --surface:#111319; --elev:#171a21;
+  --ink:#ecedf1; --muted:#a8afbf; --line:#242938;
+  --brand:#5aa7ff; --brand-2:#9ed0ff;
+  --ok:#58d68d; --warn:#ffd166; --err:#ff6b6b;
+  --chip:#0f1320; --chip-line:#2b3550;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --bg-grad-1:#0a0b0e;
+  --bg-grad-2:#0e1015;
+}
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
-    margin:0; background:linear-gradient(180deg,#0a0b0e 0%, #0e1015 100%);
-    color:var(--ink); font:15.5px/1.45 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  }
+  margin:0;
+  background:linear-gradient(180deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 100%);
+  color:var(--ink);
+  font:15.5px/1.45 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background 250ms ease, color 250ms ease;
+}
+/* Smooth theme transitions for common surfaces/borders */
+.card, .panel, .kpi, .table-wrap, table, th, td, input[type=number],
+.seg, .btn, .chip, details {
+  transition: background 250ms ease, color 250ms ease,
+              border-color 250ms ease, box-shadow 250ms ease;
+}
   .container{max-width:1000px;margin:0 auto;padding:28px 16px 96px}
-  header{
-    position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(6px);
-    background:linear-gradient(180deg,#0c0f15cc 0%, #0c0f1500 100%); padding:10px 0 6px; margin-bottom:10px;
-  }
+  
+header {
+  position: static;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(120%) blur(6px);
+  padding: 10px 0 6px;
+  margin-bottom: 10px;
+  background: linear-gradient(
+    180deg,
+    var(--bg-grad-1) 0%,
+    var(--bg-grad-2) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+/* Dark mode override */
+html.theme-dark header {
+  background: linear-gradient(180deg, #0c0f15cc 0%, #0c0f1500 100%);
+}
+
   .hstack{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
   .space{flex:1}
   .title{font-weight:800; letter-spacing:.2px; margin:0}
@@ -44,6 +97,46 @@
   .seg button[aria-pressed="true"]{
     color:#0a0d13; background:linear-gradient(180deg,#bfe0ff 0%, #6ab0ff 100%);
   }
+
+/* === Tabs + Theme toggle row === */
+.seg-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:8px;
+}
+
+/* === Theme toggle button === */
+.theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:9999px;
+  background:var(--surface);
+  color:var(--ink);
+  border:1px solid var(--line);
+  cursor:pointer;
+  transition:
+    transform 180ms ease,
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.theme-toggle:active{
+  transform: translateY(0);
+}
+.theme-toggle .icon{
+  font-size:16px;
+  line-height:1;
+}
 
   /* ===== Card ===== */
   .card{
@@ -89,16 +182,27 @@
   /* ===== Table ===== */
   table{width:100%; border-collapse:collapse; margin-top:10px}
   th,td{border:1px solid var(--line); padding:10px; text-align:center}
-  th{background:#0f1422; font-weight:800}
-  tfoot th{background:#0f1320}
+  table thead th {
+  background: var(--elev);
+  color: var(--ink);
+  font-weight: 800;
+}
+  table tfoot th {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 800;
+}
 
   /* ===== Accordion for days ===== */
   details{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 10px; margin-top:10px}
   summary{cursor:pointer; font-weight:800}
   summary::-webkit-details-marker{display:none}
   .badge{display:inline-block; padding:3px 8px; border-radius:999px; background:#13223a; color:#bfe0ff; margin-left:8px; font-size:12px}
+ 
   /* Footer */
-  .foot{margin-top:8px; font-size:12px; color:var(--muted)}
+  .foot{
+      margin-top:8px; font-size:12px; color:var(--muted); 
+}
   .footer-logo {
   max-width: 140px;
   height: auto;
@@ -106,9 +210,8 @@
   margin: 0 auto 10px;
 }
 
-footer p {
-  color: #fff;
-  margin: 0;
+  footer p{ 
+    color:var(--muted); margin:0; 
 }
 
 footer .version {
@@ -126,4 +229,21 @@ footer .version {
   .card{ overflow-x:auto; -webkit-overflow-scrolling: touch }
   /* Let table size itself naturally so horizontal scrolling engages */
   .card table{ width:max-content; }
+}
+
+/* === Tables: cross-color row hover === */
+table tbody tr:hover td{
+  background:#eef4ff;
+}
+html.theme-dark table tbody tr:hover td{
+  background:#111b2f;
+}
+
+@keyframes pulseCell{
+  0%   { box-shadow: inset 0 0 0 0 rgba(63,131,248,0); }
+  50%  { box-shadow: inset 0 0 0 9999px rgba(63,131,248,.06); }
+  100% { box-shadow: inset 0 0 0 0 rgba(63,131,248,0); }
+}
+table tbody tr:hover td:nth-child(3){
+  animation: pulseCell 800ms ease-in-out 1;
 }

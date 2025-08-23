@@ -126,6 +126,21 @@ function fullPlan(initial, targetEach){
 /* ===== UI ===== */
 const el = (id)=>document.getElementById(id);
 const ids = {target:'target',a:'t0',b:'t1',c:'t2'};
+
+// ===== THEME =====
+function applyTheme(theme){
+  const root = document.documentElement;
+  const icon = el('btn-theme')?.querySelector('.icon');
+
+  if (theme === 'dark') {
+    root.classList.add('theme-dark');
+    if (icon) icon.textContent = '🌙';
+  } else {
+    root.classList.remove('theme-dark');
+    if (icon) icon.textContent = '☀️';
+  }
+}
+
 function isBlank(x){ return (x==="" || x===null || typeof x==="undefined"); }
 function readNum(id){ const v=el(id).value; if(isBlank(v)) return null; const n=+v; return Number.isFinite(n)?Math.max(0,Math.floor(n)):0; }
 function allProvided(){ return ![ids.a,ids.b,ids.c].some(id=>isBlank(el(id).value)); }
@@ -296,6 +311,22 @@ document.addEventListener('keydown', e=>{
     if(idsAll.includes(document.activeElement.id)) calculate();
   }
 });
+
+// Theme toggle
+(function initTheme(){
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+
+  const tbtn = el('btn-theme');
+  if (tbtn) {
+    tbtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('theme-dark');
+      const next = isDark ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+  }
+})();
 setMode('barn'); // init
 
 /* ===== Last but not least ===== */
