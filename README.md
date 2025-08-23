@@ -1,5 +1,5 @@
 # Material Upgrade Planner – Hay Day  
-**Version:** 1.3.2  
+**Version:** 1.4.0  
 **Author:** Black Production®  
 
 ==============================  
@@ -71,6 +71,12 @@ All notable changes are documented here.
 This project follows [Semantic Versioning](https://semver.org/).  
 
 ==============================  
+
+## v1.4.0 – Theme Toggle & UI Enhancements
+- Implemented light/dark mode with persistent preference storage.
+- Adapted tables, buttons, header, and footer to support both themes.  
+
+==============================
 
 ## 1.3.2 — Distribution Slot Sorting  
 - Distribution Slot table now sorts rows by **Amount ascending**.  
