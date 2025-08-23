@@ -187,7 +187,10 @@ function preset(){
 }
 
 function renderDayNode(node, names){
-  const slots = node.slots.map((s,i)=>`<tr><td>${i+1}</td><td>${s.tool}</td><td>${s.amount}</td></tr>`).join('');
+  const slots = [...node.slots]
+  .sort((a,b) => (a.amount - b.amount) || a.tool.localeCompare(b.tool)) 
+  .map((s,i)=> `<tr><td>${i+1}</td><td>${s.tool}</td><td>${s.amount}</td></tr>`)
+  .join('');
   const track = [0,1,2].map(i=>`
     <tr>
       <td>${names[i]}</td>
