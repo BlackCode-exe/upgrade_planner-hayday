@@ -72,6 +72,13 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ==============================  
 
+## 1.3.2 — Distribution Slot Sorting  
+- Distribution Slot table now sorts rows by **Amount ascending**.  
+- Slot column remains sequential (1, 2, 3, …).  
+- Improves readability by surfacing smallest slot values first.  
+
+==============================  
+
 ## 1.3.0 — Balanced Distribution Edge Fix  
 - Fixed: Day-1 distribution no longer exceeds the daily cap.  
 - Improved distribution for large upgrades with low stock.  
