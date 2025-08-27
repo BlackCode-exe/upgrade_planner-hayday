@@ -3,83 +3,140 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Material Upgrade Planner - Hay Day</title>
+<title>Upgrade Planner - Hay Day</title>
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 <header>
   <div class="container hstack">
-<h1>
-  Upgrade Tool - Hay Day
-  <span class="subtitle">Plan and calculate the items required for your next capacity upgrade.</span>
-</h1>
+    <h1>
+      <span id="app-title" data-i18n="title">Upgrade Tool - Hay Day</span>
+      <span id="app-subtitle" class="subtitle" data-i18n="subtitle">
+        Plan and calculate the items required for your next capacity upgrade.
+      </span>
+    </h1>
     <div class="space"></div>
     <div class="seg-wrap">
-  <div class="seg" role="tablist" aria-label="Mode">
-    <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn">BARN</button>
-    <button id="tab-silo" role="tab" aria-pressed="false" data-mode="silo">SILO</button>
-    <button id="tab-expansion" role="tab" aria-pressed="false" data-mode="expansion">EXPANSION</button>
-  </div>
+        
+      <div class="seg" role="tablist" aria-label="Mode">
+        <button id="tab-barn" role="tab" aria-pressed="true" data-mode="barn" data-i18n="tabs.barn">BARN</button>
+        <button id="tab-silo" role="tab" aria-pressed="false" data-mode="silo" data-i18n="tabs.silo">SILO</button>
+        <button id="tab-expansion" role="tab" aria-pressed="false" data-mode="expansion" data-i18n="tabs.expansion">EXPANSION</button>
+      </div>
 
-  <button id="btn-theme" class="theme-toggle" title="Toggle Light/Dark" aria-label="Toggle theme">
-    <span class="icon">☀️</span>
-  </button>
-</div>
+      <button id="btn-theme" class="theme-toggle" title="Toggle Light/Dark" aria-label="Toggle theme">
+        <span class="icon">☀️</span>
+      </button>
+      
+      <select id="lang" class="lang-select" aria-label="Language">
+  <option value="en">🇺🇸 English</option>
+  <option value="es">🇪🇸 Español</option>
+  <option value="fr">🇫🇷 Français</option>
+  <option value="de">🇩🇪 Deutsch</option>
+  <option value="id">🇮🇩 Indonesia</option>
+  <option value="it">🇮🇹 Italiano</option>
+  <option value="ms">🇲🇾 Bahasa Melayu</option>
+  <option value="nl">🇳🇱 Nederlands</option>
+  <option value="pt">🇵🇹 Português</option>
+  <option value="ru">🇷🇺 Русский</option>
+  <option value="fi">🇫🇮 Suomi</option>
+  <option value="tr">🇹🇷 Türkçe</option>
+  <option value="ar">🇸🇦 العربية</option>
+  <option value="ja">🇯🇵 日本語</option>
+  <option value="ko">🇰🇷 한국어</option>
+  <option value="zh_CN">🇨🇳 简体中文</option>
+  <option value="zh_TW">🇹🇼 繁體中文</option>
+</select>
+      
+    </div>
   </div>
 </header>
 
 <main class="container">
   <section class="card">
-    <h2>Materials</h2>
-    <div class="hint" id="hint-mode">Barn: Bolt, Plank, Duct Tape.</div>
+    <h2 id="materials-title" data-i18n="materials.title">Materials</h2>
+    <div class="hint" id="hint-mode" data-i18n="materials.hint.barn">Barn: Bolt, Plank, Duct Tape.</div>
 
     <div class="grid" style="margin-top:12px">
-      <div class="label" id="lbl-target">Target Capacity</div>
-      <input id="target" type="number" placeholder="e.g., 1000 or 1050" />
-      <div class="label" style="grid-column:1 / -1; margin-top:8px;">Initial Stock:</div>
+      <div class="label" id="lbl-target" data-i18n="materials.target">Target Capacity</div>
+      <input id="target" type="number"
+             placeholder="e.g., 1000 or 1050"
+             data-i18n-placeholder="materials.target_ph" />
+
+      <div class="label" style="grid-column:1 / -1; margin-top:8px;" data-i18n="materials.initial">Initial Stock:</div>
+
       <div class="label" id="lbl-a">Bolt</div>
-      <input id="t0" type="number" placeholder="enter the field to perform distribution" />
+      <input id="t0" type="number"
+             placeholder="enter the field to perform distribution"
+             data-i18n-placeholder="materials.stock_ph" />
+
       <div class="label" id="lbl-b">Plank</div>
-      <input id="t1" type="number" placeholder="enter the field to perform distribution" />
+      <input id="t1" type="number"
+             placeholder="enter the field to perform distribution"
+             data-i18n-placeholder="materials.stock_ph" />
+
       <div class="label" id="lbl-c">Duct Tape</div>
-      <input id="t2" type="number" placeholder="enter the field to perform distribution" />
+      <input id="t2" type="number"
+             placeholder="enter the field to perform distribution"
+             data-i18n-placeholder="materials.stock_ph" />
     </div>
 
     <div class="toolbar">
-      <button class="btn primary" id="btn-calc">Calculate</button>
-      <button class="btn primary" id="btn-clear" title="Clear all fields">Clear</button>
-      <button class="btn primary" id="btn-preset" title="Quick example">Preset</button>
+      <button class="btn primary" id="btn-calc"
+              data-i18n="btn.calculate"
+              data-i18n-title="btn.calculate"
+              title="Calculate">Calculate</button>
+
+      <button class="btn primary" id="btn-clear"
+              data-i18n="btn.clear"
+              data-i18n-title="btn.clear_tip"
+              title="Clear all fields">Clear</button>
+
+      <button class="btn primary" id="btn-preset"
+              data-i18n="btn.preset"
+              data-i18n-title="btn.preset_tip"
+              title="Quick example">Preset</button>
     </div>
 
     <div id="msg" class="msg" aria-live="polite"></div>
 
     <div class="kpi" id="kpi" style="display:none">
-      <span class="chip">Per-tool target: <span class="mono" id="kpi-needEach">–</span></span>
+      <span class="chip">
+        <span class="kpi-label" data-i18n="kpi.perTool">Per-tool target:</span>
+        <span class="mono" id="kpi-needEach">–</span>
+      </span>
       <span class="chip"><span class="mono" id="kpi-a">–</span></span>
       <span class="chip"><span class="mono" id="kpi-b">–</span></span>
       <span class="chip"><span class="mono" id="kpi-c">–</span></span>
-      <span class="chip ok" id="kpi-rule1">Balanced ✓</span>
-      <span class="chip ok" id="kpi-rule2">≤ 89/day ✓</span>
+      <span class="chip ok" id="kpi-rule1" data-i18n="kpi.balanced">Balanced ✓</span>
+      <span class="chip ok" id="kpi-rule2" data-i18n="kpi.cap">≤ 89/day ✓</span>
     </div>
   </section>
 
   <section id="out" class="card" style="display:none">
-    <h2>Distribution Plan</h2>
-    <div class="hint">Daily distribution slots + daily tracking. End-of-day counts are exactly equal.</div>
+    <h2 id="plan-title" data-i18n="plan.title">Distribution Plan</h2>
+    <div class="hint" id="plan-hint" data-i18n="plan.hint">
+      Daily distribution slots + daily tracking. End-of-day counts are exactly equal.
+    </div>
+
     <div id="days"></div>
-    <div class="foot">Policy guard: if any initial stock field is blank, no distribution is executed; only per-tool requirements are shown.</div>
+
+<div class="foot" id="plan-policy" data-i18n="plan.policy">
+  Policy guard: if any initial stock field is blank, no distribution is executed; only per-tool requirements are shown.
+</div>
+
   </section>
 </main>
 
 <footer class="foot" style="text-align:center;">
-  <img src="assets/logo.png" alt="logo" class="footer-logo">
+  <img src="assets/img/logo.png" alt="logo" class="footer-logo">
   <p>
-    © 2025 Black Production®, All rights reserved. |
-    <span class="version">v1.4.0</span>
+    © 2025 Black Production® All rights reserved. |
+    <a class="version" href="https://github.com/BlackCode-exe/hd_upgrade-tools/blob/main/README.md" target="_blank">v1.4.0</span>
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script src="assets/script.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 # Material Upgrade Planner – Hay Day  
-**Version:** 1.4.0  
+**Version:** 1.5.0  
 **Author:** Black Production®  
-
+**Discord:** blackcode.exe
 ==============================  
 
 ## Overview  
@@ -71,6 +71,13 @@ All notable changes are documented here.
 This project follows [Semantic Versioning](https://semver.org/).  
 
 ==============================  
+
+## v1.5.0 – Multi-Language Support
+- Added support for 19 new languages alongside existing English, Español, and Indonesia.  
+- All user-facing text (UI labels, warnings, distribution sections, etc.) now localized.  
+- Language selector integrated into the interface for seamless switching.
+
+==============================
 
 ## v1.4.0 – Theme & UI Enhancements
 - Implemented light/dark mode with persistent preference storage.
