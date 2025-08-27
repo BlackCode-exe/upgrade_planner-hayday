@@ -19,8 +19,8 @@
 
   --radius:16px;
   --shadow: 0 12px 32px rgba(0,0,0,.12);
---  bg-grad-1:#f8fafc;
---  bg-grad-2:#eef2f7;
+  --bg-grad-1:#f8fafc;
+  --bg-grad-2:#eef2f7;
 }
 
 html.theme-dark{
@@ -73,12 +73,26 @@ html.theme-dark header {
   background: linear-gradient(180deg, #0c0f15cc 0%, #0c0f1500 100%);
 }
 
-  .hstack{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.hstack{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+
+  background: rgba(12,15,21,0.16);
+  backdrop-filter: blur(18px) saturate(160%) contrast(105%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(105%);
+  box-shadow: none;
+}
+html.theme-dark .hstack{
+  background: rgba(22,24,30,0.14);
+  border: 1px solid rgba(255,255,255,0.08);
+}
   .space{flex:1}
   .title{font-weight:800; letter-spacing:.2px; margin:0}
   .subtitle {
   display: block;
-  font-size: 16px; /* atau sesuai style */
+  font-size: 14px;
   font-weight: normal;
   margin-top: 4px;
 }
@@ -136,6 +150,27 @@ html.theme-dark header {
 .theme-toggle .icon{
   font-size:16px;
   line-height:1;
+}
+
+/* === Language selector  === */
+.lang-select {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, border .3s ease;
+}
+.lang-select:hover { background: var(--elev); }
+
+html.theme-dark .lang-select {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  border-color: #444;
 }
 
   /* ===== Card ===== */
@@ -204,7 +239,7 @@ html.theme-dark header {
       margin-top:8px; font-size:12px; color:var(--muted); 
 }
   .footer-logo {
-  max-width: 140px;
+  max-width: 240px;
   height: auto;
   display: block;
   margin: 0 auto 10px;
@@ -214,21 +249,38 @@ html.theme-dark header {
     color:var(--muted); margin:0; 
 }
 
-footer .version {
-  color: #00ff00;
-  font-weight: bold;
+footer .version{
+  color:#4f8cff;
+  font-weight:700;
+  text-decoration:none;
+  outline:none;
 }
-  
+
+footer .version:hover{
+  text-decoration:none;
+  filter: drop-shadow(0 0 6px rgba(79,140,255,.55));
+}
+
+footer .version:focus-visible{
+  outline:2px solid rgba(79,140,255,.65);
+  outline-offset:2px;
+  border-radius:4px;
+}
+
 /* ===== Responsive: mobile behavior ===== */
 @media (max-width: 768px){
-  /* Tie container to viewport on phones */
   .container{ width:100%; min-width:0; }
-  /* Prevent whole-page sideways scroll on phones */
   body{ overflow-x:hidden; }
-  /* Scroll inside the card for wide tables */
   .card{ overflow-x:auto; -webkit-overflow-scrolling: touch }
-  /* Let table size itself naturally so horizontal scrolling engages */
   .card table{ width:max-content; }
+  #out #days details {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #out #days details table {
+    width: max-content;
+    min-width: 100%;
+  }
 }
 
 /* === Tables: cross-color row hover === */
@@ -246,4 +298,71 @@ html.theme-dark table tbody tr:hover td{
 }
 table tbody tr:hover td:nth-child(3){
   animation: pulseCell 800ms ease-in-out 1;
+}
+
+/* ===== No Rec ===== */
+
+html, body, button, input, select, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+input:focus,
+select:focus,
+a:focus,
+[role="button"]:focus,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+.btn:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(255, 200, 0, 0.6); 
+  border-radius: 6px;
+  transition: box-shadow 0.2s ease;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0 !important;
+}
+:-moz-focusring {
+  outline: none !important;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn:focus-visible {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+button,
+.btn {
+  color: #000;
+  text-shadow: none;
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  color: #333;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+button:active,
+button:focus:active,
+.btn:active,
+.btn:focus:active {
+  color: #fff !important;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9),
+               0 0 12px rgba(255, 255, 255, 0.7);
+  transition: all 0.15s ease;
 }
