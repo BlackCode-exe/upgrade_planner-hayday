@@ -156,6 +156,15 @@ async function setLang(code){
   applyLang(code);
 }
 
+/* Language Helper */
+function currentLangCode(){
+  try {
+    return localStorage.getItem('lang') || (navigator.language || 'en').slice(0,2);
+  } catch(_) {
+    return 'en';
+  }
+}
+
 /* Bootstrap i18n */
 (function initI18N(){
   (async () => {
@@ -297,6 +306,9 @@ function allProvided(){ return ![ids.a,ids.b,ids.c].some(id=>{const k=el(id); re
 /* ===== Mode switch  ===== */
 function setMode(newMode){
   mode = newMode;
+
+// Re-apply i18n (tab text, buttons, dsb)
+setTimeout(()=> applyLang(currentLangCode()), 0);
 
   // Guarded tab state
   ["barn","silo","expansion"].forEach(m =>{
@@ -537,15 +549,5 @@ const names = getToolNames(mode);
 (function init(){
   try{ setMode('barn'); }catch(_){}
   document.addEventListener("contextmenu", function(e) { e.preventDefault(); });
-})();
-
-/* Language bootstrap */
-(function initI18N(){
-  const code = currentLang();
-  applyLang(code);
-  const sel = el('lang');
-  if (sel){
-    sel.addEventListener('change', e=> applyLang(e.target.value));
-  }
 })();
 
