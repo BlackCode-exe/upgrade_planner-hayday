@@ -1,4 +1,4 @@
-# Material Upgrade Planner – Hay Day  
+# Upgrade Planner – Hay Day  
 **Version:** 1.5.0  
 **Author:** Black Production®  
 **Discord:** [blackcode.exe](https://discord.gg/5Y82CnHD/)
