@@ -1,1 +1,64 @@
-
+{
+  "policy": {
+    "capacity": {
+      "tier1": {
+        "min": 75,
+        "max": 1000,
+        "step": 25,
+        "baseCount": 1,
+        "baseCap": 75
+      },
+      "tier2": {
+        "min": 1050,
+        "max": 25000,
+        "step": 50,
+        "baseCount": 39,
+        "baseCap": 1050
+      }
+    },
+    "dailyCap": 89,
+    "slotChunk": 10
+  },
+  "toolsets": {
+    "barn": [
+      "Bolt",
+      "Plank",
+      "Duct Tape"
+    ],
+    "silo": [
+      "Nail",
+      "Screw",
+      "Wood Panel"
+    ],
+    "expansion": [
+      "Land Deed",
+      "Mallet",
+      "Marker Stake"
+    ]
+  },
+  "theme": {
+    "icons": {
+      "light": "☀️",
+      "dark": "🌙"
+    }
+  },
+  "preset": {
+    "barn": {
+      "target": 2750,
+      "a": 9,
+      "b": 12,
+      "c": 25
+    },
+    "expansion": {
+      "target": 45,
+      "a": 14,
+      "b": 6,
+      "c": 10
+    }
+  },
+  "features": {
+    "newBalanceAlgo": false,
+    "forceFullBleedMobile": false
+  },
+  "defaultLang": "en"
+}
