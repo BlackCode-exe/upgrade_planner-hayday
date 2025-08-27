@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Rebite",
+      "Tábua",
+      "Fita Adesiva"
+    ],
+    "silo": [
+      "Prego",
+      "Parafuso",
+      "Painel de Madeira"
+    ],
+    "expansion": [
+      "Escritura do Terreno",
+      "Marreta",
+      "Estaca de Marcação"
+    ]
+  },
+  "ui": {
+    "title": "Planejador de melhorias - Hay Day",
+    "subtitle": "Planeje e calcule os itens necessários para sua próxima melhoria de capacidade.",
+    "tabs.barn": "CELEIRO",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "EXPANSÃO",
+    "materials.title": "Materiais",
+    "materials.hint.barn": "Celeiro: Rebite, Tábua, Fita Adesiva.",
+    "materials.hint.silo": "Silo: Prego, Parafuso, Painel de Madeira.",
+    "materials.hint.expansion": "Expansão de terra: Escritura do Terreno, Marreta, Estaca de Marcação.",
+    "materials.target": "Capacidade Alvo",
+    "materials.target_ph": "ex: 1000 ou 1050",
+    "materials.targetTool": "Ferramenta Alvo",
+    "materials.target_ph_exp": "ex: 45",
+    "materials.initial": "Estoque Inicial:",
+    "materials.stock_ph": "preencha o formulário para realizar a distribuição",
+    "btn.calculate": "Calcular",
+    "btn.clear": "Limpar",
+    "btn.clear_tip": "Limpar todos os campos",
+    "btn.preset": "Exemplo",
+    "btn.preset_tip": "Exemplo rápido",
+    "kpi.perTool": "Meta por ferramenta:",
+    "kpi.balanced": "Balanceado ✓",
+    "kpi.cap": "≤ 89/dia ✓",
+    "plan.title": "Plano de Distribuição",
+    "plan.hint": "Espaços de distribuição diários + acompanhamento diário. As contagens no final do dia são exatamente iguais.",
+    "plan.day": "Dia",
+    "plan.used": "Usado",
+    "plan.endTotal": "Total final",
+    "plan.each": "cada",
+    "plan.sectionSlots": "📦 Espaços de Distribuição",
+    "plan.sectionTracking": "📊 Acompanhamento Diário (Balanceado no final de cada dia)",
+    "plan.policy": "Proteção de política: se algum formulário de estoque inicial estiver em branco, nenhuma distribuição será executada; apenas os requisitos por ferramenta são mostrados.",
+    "table.slot": "Espaço",
+    "table.tool": "Ferramenta",
+    "table.amount": "Quantidade",
+    "table.total": "TOTAL",
+    "table.start": "Início",
+    "table.added": "Adicionado",
+    "table.remaining": "Restante",
+    "table.target": "Meta",
+    "table.check": "Verificar",
+    "table.noDist": "Sem distribuição",
+    "err.invalid": "Inválido! Por favor, preencha o formulário para continuar.",
+    "msg.enter": "Insira o estoque inicial para realizar a distribuição.",
+    "msg.expansionReq": "Cada ferramenta requer <b>{n} itens</b> para desbloquear o terreno.",
+    "msg.upgradeReq": "Cada ferramenta requer <b>{n} itens</b> para melhorar da capacidade {cap}.",
+    "msg.generated": "Plano gerado em {d} dia(s). Balanceado diariamente."
+  }
+}

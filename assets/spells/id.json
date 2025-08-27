@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Baut",
+      "Papan",
+      "Lakban"
+    ],
+    "silo": [
+      "Paku",
+      "Sekrup",
+      "Bilah Kayu"
+    ],
+    "expansion": [
+      "Akta Tanah",
+      "Martil Kayu",
+      "Patok Tanah"
+    ]
+  },
+  "ui": {
+    "title": "Perencana Upgrade - Hay Day",
+    "subtitle": "Rencanakan dan hitung item yang diperlukan untuk upgrade kapasitas berikutnya.",
+    "tabs.barn": "LUMBUNG",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "PERLUASAN",
+    "materials.title": "Material",
+    "materials.hint.barn": "Lumbung: Baut, Papan, Lakban.",
+    "materials.hint.silo": "Silo: Paku, Sekrup, Bilah Kayu.",
+    "materials.hint.expansion": "Ekspansi: Akta Tanah, Martil Kayu, Patok Tanah.",
+    "materials.target": "Target Kapasitas",
+    "materials.target_ph": "mis. 1000 atau 1050",
+    "materials.targetTool": "Target alat",
+    "materials.target_ph_exp": "mis. 45",
+    "materials.initial": "Stok Awal:",
+    "materials.stock_ph": "isi kolom untuk menjalankan distribusi",
+    "btn.calculate": "Hitung",
+    "btn.clear": "Hapus",
+    "btn.clear_tip": "Hapus semua kolom",
+    "btn.preset": "Contoh",
+    "btn.preset_tip": "Contoh bawaan",
+    "kpi.perTool": "Target per item:",
+    "kpi.balanced": "Seimbang ✓",
+    "kpi.cap": "≤ 89/hari ✓",
+    "plan.title": "Rencana Distribusi",
+    "plan.hint": "Slot distribusi harian + pelacakan harian. Total di akhir hari sama.",
+    "plan.day": "Hari",
+    "plan.used": "Terpakai",
+    "plan.endTotal": "Total akhir",
+    "plan.each": "masing-masing",
+    "plan.sectionSlots": "📦 Slot Distribusi",
+    "plan.sectionTracking": "📊 Pelacakan Harian (Sama rata di akhir setiap hari)",
+    "plan.policy": "Aturan perlindungan: Jika form stok awal belum diisi, distribusi tidak akan dijalankan; hanya kebutuhan per alat yang akan ditampilkan.",
+    "table.slot": "Slot",
+    "table.tool": "Alat",
+    "table.amount": "Jumlah",
+    "table.total": "TOTAL",
+    "table.start": "Awal",
+    "table.added": "Tambah",
+    "table.remaining": "Sisa",
+    "table.target": "Target",
+    "table.check": "Cek",
+    "table.noDist": "Tidak ada distribusi",
+    "err.invalid": "Tidak valid! Isi kolom untuk melanjutkan.",
+    "msg.enter": "Masukkan stok awal untuk menjalankan distribusi.",
+    "msg.expansionReq": "Setiap alat membutuhkan <b>{n} item</b> untuk membuka lahan.",
+    "msg.upgradeReq": "Setiap alat membutuhkan <b>{n} item untuk upgrade dari kapasitas {cap}.</b>",
+    "msg.generated": "Rencana dibuat dalam {d} hari. Seimbang per hari."
+  }
+}

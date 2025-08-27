@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Pultti",
+      "Lankku",
+      "Ilmastointiteippi"
+    ],
+    "silo": [
+      "Naula",
+      "Ruuvi",
+      "Puupaneeli"
+    ],
+    "expansion": [
+      "Maakirja",
+      "Nuija",
+      "Rajamerkki"
+    ]
+  },
+  "ui": {
+    "title": "Päivityssuunnitelma – Hay Day",
+    "subtitle": "Suunnittele ja laske seuraavaan kapasiteettipäivitykseesi tarvittavat esineet.",
+    "tabs.barn": "LATO",
+    "tabs.silo": "VILJAVARASTO",
+    "tabs.expansion": "LAAJENNUS",
+    "materials.title": "Materiaalit",
+    "materials.hint.barn": "Lato: Pultti, Lankku, Ilmastointiteippi.",
+    "materials.hint.silo": "Viljavarasto: Naula, Ruuvi, Puupaneeli.",
+    "materials.hint.expansion": "Maanlaajennus: Maakirja, Nuija, Rajamerkki.",
+    "materials.target": "Tavoitekapasiteetti",
+    "materials.target_ph": "esim. 1000 tai 1050",
+    "materials.targetTool": "Tavoitetyökalu",
+    "materials.target_ph_exp": "esim. 45",
+    "materials.initial": "Alkuvarasto:",
+    "materials.stock_ph": "täytä lomake suorittaaksesi jaon",
+    "btn.calculate": "Laske",
+    "btn.clear": "Tyhjennä",
+    "btn.clear_tip": "Tyhjennä kaikki kentät",
+    "btn.preset": "Esimerkki",
+    "btn.preset_tip": "Nopea esimerkki",
+    "kpi.perTool": "Tavoite per työkalu:",
+    "kpi.balanced": "Tasapainossa ✓",
+    "kpi.cap": "≤ 89/päivä ✓",
+    "plan.title": "Jakelusuunnitelma",
+    "plan.hint": "Päivittäiset jakelupaikat + päivittäinen seuranta. Päivän lopun määrät ovat täsmälleen samat.",
+    "plan.day": "Päivä",
+    "plan.used": "Käytetty",
+    "plan.endTotal": "Loppusumma",
+    "plan.each": "kutakin",
+    "plan.sectionSlots": "📦 Jakelupaikat",
+    "plan.sectionTracking": "📊 Päivittäinen seuranta (Tasapainossa jokaisen päivän lopussa)",
+    "plan.policy": "Käytäntösuoja: jos jokin alkuvarastolomake on tyhjä, jakoa ei suoriteta; vain työkalukohtaiset vaatimukset näytetään.",
+    "table.slot": "Paikka",
+    "table.tool": "Työkalu",
+    "table.amount": "Määrä",
+    "table.total": "YHTEENSÄ",
+    "table.start": "Alku",
+    "table.added": "Lisätty",
+    "table.remaining": "Jäljellä",
+    "table.target": "Tavoite",
+    "table.check": "Tarkista",
+    "table.noDist": "Ei jakelua",
+    "err.invalid": "Virheellinen! Täytä lomake jatkaaksesi.",
+    "msg.enter": "Syötä alkuvarasto suorittaaksesi jaon.",
+    "msg.expansionReq": "Jokainen työkalu vaatii <b>{n} esinettä</b> maan avaamiseksi.",
+    "msg.upgradeReq": "Jokainen työkalu vaatii <b>{n} esinettä</b> päivittääkseen kapasiteetista {cap}.",
+    "msg.generated": "Suunnitelma luotu {d} päivässä. Tasapainotettu päivittäin."
+  }
+}

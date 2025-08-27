@@ -1,1 +1,68 @@
-
+{
+  "toolsets": {
+    "barn": [
+      "Bolt",
+      "Plank",
+      "Duct Tape"
+    ],
+    "silo": [
+      "Nail",
+      "Screw",
+      "Wood Panel"
+    ],
+    "expansion": [
+      "Land Deed",
+      "Mallet",
+      "Marker Stake"
+    ]
+  },
+  "ui": {
+    "title": "Upgrade Planner - Hay Day",
+    "subtitle": "Plan and calculate the items required for your next capacity upgrade.",
+    "tabs.barn": "BARN",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "EXPANSION",
+    "materials.title": "Materials",
+    "materials.hint.barn": "Barn: Bolt, Plank, Duct Tape.",
+    "materials.hint.silo": "Silo: Nail, Screw, Wood Panel.",
+    "materials.hint.expansion": "Expansion: Land Deed, Mallet, Marker Stake.",
+    "materials.target": "Target Capacity",
+    "materials.target_ph": "e.g., 1000 or 1050",
+    "materials.targetTool": "Target tool",
+    "materials.target_ph_exp": "e.g., 45",
+    "materials.initial": "Initial Stock:",
+    "materials.stock_ph": "enter the form to perform distribution",
+    "btn.calculate": "Calculate",
+    "btn.clear": "Clear",
+    "btn.clear_tip": "Clear all fields",
+    "btn.preset": "Preset",
+    "btn.preset_tip": "Quick example",
+    "kpi.perTool": "Per-tool target:",
+    "kpi.balanced": "Balanced ✓",
+    "kpi.cap": "≤ 89/day ✓",
+    "plan.title": "Distribution Plan",
+    "plan.hint": "Daily distribution slots + daily tracking. End-of-day counts are exactly equal.",
+    "plan.day": "Day",
+    "plan.used": "Used",
+    "plan.endTotal": "End total",
+    "plan.each": "each",
+    "plan.sectionSlots": "📦 Distribution Slots",
+    "plan.sectionTracking": "📊 Daily Tracking (Balanced by the end of each day)",
+    "plan.policy": "Policy guard: if any initial stock form is blank, no distribution is executed; only per-tool requirements are shown.",
+    "table.slot": "Slot",
+    "table.tool": "Tool",
+    "table.amount": "Amount",
+    "table.total": "TOTAL",
+    "table.start": "Start",
+    "table.added": "Added",
+    "table.remaining": "Remaining",
+    "table.target": "Target",
+    "table.check": "Check",
+    "table.noDist": "No distribution",
+    "err.invalid": "Invalid! Please enter the form to perform.",
+    "msg.enter": "Enter the initial stock to perform distribution.",
+    "msg.expansionReq": "Each tool requires <b>{n} items</b> to unlock the land.",
+    "msg.upgradeReq": "Each tool requires <b>{n} items to upgrade from capacity {cap}.</b>",
+    "msg.generated": "Plan generated in {d} day(s). Balanced daily."
+  }
+}

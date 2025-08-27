@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Civata",
+      "Kalas",
+      "Bant"
+    ],
+    "silo": [
+      "Çivi",
+      "Vida",
+      "Ahşap Levha"
+    ],
+    "expansion": [
+      "Tapu",
+      "Tokmak",
+      "İşaret Kazığı"
+    ]
+  },
+  "ui": {
+    "title": "Yükseltme Planlayıcı - Hay Day",
+    "subtitle": "Bir sonraki kapasite yükseltmeniz için gereken öğeleri planlayın ve hesaplayın.",
+    "tabs.barn": "AĞIL",
+    "tabs.silo": "AMBAR",
+    "tabs.expansion": "GENİŞLETME",
+    "materials.title": "Malzemeler",
+    "materials.hint.barn": "Ağıl: Civata, Kalas, Bant.",
+    "materials.hint.silo": "Ambar: Çivi, Vida, Ahşap Levha.",
+    "materials.hint.expansion": "Çiftlik Genişletme: Tapu, Tokmak, İşaret Kazığı.",
+    "materials.target": "Hedef Kapasite",
+    "materials.target_ph": "örn. 1000 veya 1050",
+    "materials.targetTool": "Hedef alet",
+    "materials.target_ph_exp": "örn. 45",
+    "materials.initial": "Başlangıç Stoğu:",
+    "materials.stock_ph": "dağıtımı gerçekleştirmek için formu doldurun",
+    "btn.calculate": "Hesapla",
+    "btn.clear": "Temizle",
+    "btn.clear_tip": "Tüm alanları temizle",
+    "btn.preset": "Örnek",
+    "btn.preset_tip": "Hızlı örnek",
+    "kpi.perTool": "Alet başına hedef:",
+    "kpi.balanced": "Dengeli ✓",
+    "kpi.cap": "≤ 89/gün ✓",
+    "plan.title": "Dağıtım Planı",
+    "plan.hint": "Günlük dağıtım yuvaları + günlük takip. Gün sonu sayıları tam olarak eşittir.",
+    "plan.day": "Gün",
+    "plan.used": "Kullanılan",
+    "plan.endTotal": "Son toplam",
+    "plan.each": "her biri",
+    "plan.sectionSlots": "📦 Dağıtım Yuvaları",
+    "plan.sectionTracking": "📊 Günlük Takip (Her günün sonunda dengelenir)",
+    "plan.policy": "Politika koruması: herhangi bir başlangıç stoku formu boşsa, dağıtım yapılmaz; sadece alet başına gereksinimler gösterilir.",
+    "table.slot": "Yuva",
+    "table.tool": "Alet",
+    "table.amount": "Miktar",
+    "table.total": "TOPLAM",
+    "table.start": "Başlangıç",
+    "table.added": "Eklendi",
+    "table.remaining": "Kalan",
+    "table.target": "Hedef",
+    "table.check": "Kontrol",
+    "table.noDist": "Dağıtım yok",
+    "err.invalid": "Geçersiz! Lütfen devam etmek için formu doldurun.",
+    "msg.enter": "Dağıtımı gerçekleştirmek için başlangıç stoğunu girin.",
+    "msg.expansionReq": "Her alet, araziyi açmak için <b>{n} öğe</b> gerektirir.",
+    "msg.upgradeReq": "Her alet, kapasite {cap}'den yükseltmek için <b>{n} öğe</b> gerektirir.",
+    "msg.generated": "Plan {d} gün içinde oluşturuldu. Günlük olarak dengeli."
+  }
+}

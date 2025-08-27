@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Bullone",
+      "Asse",
+      "Nastro isolante"
+    ],
+    "silo": [
+      "Chiodo",
+      "Vite",
+      "Pannello di legno"
+    ],
+    "expansion": [
+      "Atto D'acquisto",
+      "Mazzulo",
+      "Palleto"
+    ]
+  },
+  "ui": {
+    "title": "Pianificatore di potenziamenti - Hay Day",
+    "subtitle": "Pianifica e calcola gli oggetti necessari per il tuo prossimo potenziamento di capacità.",
+    "tabs.barn": "GRANAIO",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "ESPANSIONE",
+    "materials.title": "Materiali",
+    "materials.hint.barn": "Il granaio: Bullone, Asse, Nastro isolante.",
+    "materials.hint.silo": "Il Silo: Chiodo, Vite, Pannello di legno.",
+    "materials.hint.expansion": "Le aree di espansione: Atto D'acquisto, Mazzulo, Palleto.",
+    "materials.target": "Capacità target",
+    "materials.target_ph": "es. 1000 o 1050",
+    "materials.targetTool": "Strumento target",
+    "materials.target_ph_exp": "es. 45",
+    "materials.initial": "Scorta iniziale:",
+    "materials.stock_ph": "inserisci il modulo per eseguire la distribuzione",
+    "btn.calculate": "Calcola",
+    "btn.clear": "Pulisci",
+    "btn.clear_tip": "Pulisci tutti i campi",
+    "btn.preset": "Esempio",
+    "btn.preset_tip": "Esempio rapido",
+    "kpi.perTool": "Target per strumento:",
+    "kpi.balanced": "Bilanciato ✓",
+    "kpi.cap": "≤ 89/giorno ✓",
+    "plan.title": "Piano di distribuzione",
+    "plan.hint": "Slot di distribuzione giornalieri + monitoraggio giornaliero. I conteggi di fine giornata sono esattamente uguali.",
+    "plan.day": "Giorno",
+    "plan.used": "Usato",
+    "plan.endTotal": "Totale finale",
+    "plan.each": "ciascuno",
+    "plan.sectionSlots": "📦 Slot di distribuzione",
+    "plan.sectionTracking": "📊 Monitoraggio giornaliero (Bilanciato alla fine di ogni giorno)",
+    "plan.policy": "Regola di protezione: se un modulo di scorta iniziale è vuoto, non viene eseguita alcuna distribuzione; vengono mostrati solo i requisiti per strumento.",
+    "table.slot": "Slot",
+    "table.tool": "Strumento",
+    "table.amount": "Quantità",
+    "table.total": "TOTALE",
+    "table.start": "Inizio",
+    "table.added": "Aggiunto",
+    "table.remaining": "Rimanente",
+    "table.target": "Target",
+    "table.check": "Controllo",
+    "table.noDist": "Nessuna distribuzione",
+    "err.invalid": "Non valido! Inserisci il modulo per procedere.",
+    "msg.enter": "Inserisci la scorta iniziale per eseguire la distribuzione.",
+    "msg.expansionReq": "Ogni strumento richiede <b>{n} oggetti</b> per sbloccare il terreno.",
+    "msg.upgradeReq": "Ogni strumento richiede <b>{n} oggetti</b> per potenziare dalla capacità {cap}.",
+    "msg.generated": "Piano generato in {d} giorno/i. Bilanciato giornalmente."
+  }
+}

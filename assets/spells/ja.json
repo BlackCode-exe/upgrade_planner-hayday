@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "ボルト",
+      "厚板",
+      "粘着テープ"
+    ],
+    "silo": [
+      "クギ",
+      "ネジ",
+      "木の板"
+    ],
+    "expansion": [
+      "土地の権利書",
+      "ハンマー",
+      "マーキング用の杭"
+    ]
+  },
+  "ui": {
+    "title": "アップグレードプランナー - ヘイ・デイ",
+    "subtitle": "次の容量アップグレードに必要なアイテムを計画し、計算します。",
+    "tabs.barn": "納屋",
+    "tabs.silo": "サイロ",
+    "tabs.expansion": "拡張",
+    "materials.title": "材料",
+    "materials.hint.barn": "納屋：ボルト、厚板、粘着テープ。",
+    "materials.hint.silo": "サイロ：クギ、ネジ、木の板。",
+    "materials.hint.expansion": "土地の拡張：土地の権利書、ハンマー、マーキング用の杭。",
+    "materials.target": "目標容量",
+    "materials.target_ph": "例：1000 または 1050",
+    "materials.targetTool": "目標ツール",
+    "materials.target_ph_exp": "例：45",
+    "materials.initial": "初期在庫：",
+    "materials.stock_ph": "フォームを入力して分配を実行します",
+    "btn.calculate": "計算",
+    "btn.clear": "クリア",
+    "btn.clear_tip": "すべてのフィールドをクリア",
+    "btn.preset": "プリセット",
+    "btn.preset_tip": "簡単な例",
+    "kpi.perTool": "ツールごとの目標：",
+    "kpi.balanced": "バランス済み ✓",
+    "kpi.cap": "≤ 89/日 ✓",
+    "plan.title": "分配計画",
+    "plan.hint": "毎日の分配スロット + 毎日の追跡。一日の終わりのカウントは完全に等しくなります。",
+    "plan.day": "日",
+    "plan.used": "使用済み",
+    "plan.endTotal": "最終合計",
+    "plan.each": "各",
+    "plan.sectionSlots": "📦 分配スロット",
+    "plan.sectionTracking": "📊 毎日の追跡（各日の終わりにバランス）",
+    "plan.policy": "ポリシーガード：初期在庫フォームが空白の場合、分配は実行されません。ツールごとの要件のみが表示されます。",
+    "table.slot": "スロット",
+    "table.tool": "ツール",
+    "table.amount": "量",
+    "table.total": "合計",
+    "table.start": "開始",
+    "table.added": "追加済み",
+    "table.remaining": "残り",
+    "table.target": "目標",
+    "table.check": "チェック",
+    "table.noDist": "分配なし",
+    "err.invalid": "無効です！続行するにはフォームを入力してください。",
+    "msg.enter": "分配を実行するには初期在庫を入力してください。",
+    "msg.expansionReq": "土地をアンロックするには、各ツールに<b>{n}個のアイテム</b>が必要です。",
+    "msg.upgradeReq": "容量{cap}からアップグレードするには、各ツールに<b>{n}個のアイテム</b>が必要です。",
+    "msg.generated": "{d}日で計画が生成されました。毎日バランスが取れています。"
+  }
+}

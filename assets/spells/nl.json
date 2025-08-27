@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Bout",
+      "Plank",
+      "Tape"
+    ],
+    "silo": [
+      "Spijker",
+      "Schroef",
+      "Houten Paneel"
+    ],
+    "expansion": [
+      "Grondakte",
+      "Moker",
+      "Markeerder"
+    ]
+  },
+  "ui": {
+    "title": "Upgradeplanner - Hay Day",
+    "subtitle": "Plan en bereken de items die nodig zijn voor je volgende capaciteitsupgrade.",
+    "tabs.barn": "SCHUUR",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "UITBREIDING",
+    "materials.title": "Materialen",
+    "materials.hint.barn": "Schuur: Bout, Plank, Tape.",
+    "materials.hint.silo": "Silo: Spijker, Schroef, Houten Paneel.",
+    "materials.hint.expansion": "Landuitbreiding: Grondakte, Moker, Markeerder.",
+    "materials.target": "Doelcapaciteit",
+    "materials.target_ph": "bijv. 1000 of 1050",
+    "materials.targetTool": "Doelgereedschap",
+    "materials.target_ph_exp": "bijv. 45",
+    "materials.initial": "Beginvoorraad:",
+    "materials.stock_ph": "voer het formulier in om de distributie uit te voeren",
+    "btn.calculate": "Bereken",
+    "btn.clear": "Wissen",
+    "btn.clear_tip": "Alle velden wissen",
+    "btn.preset": "Voorbeeld",
+    "btn.preset_tip": "Snel voorbeeld",
+    "kpi.perTool": "Doel per gereedschap:",
+    "kpi.balanced": "Gebalanceerd ✓",
+    "kpi.cap": "≤ 89/dag ✓",
+    "plan.title": "Distributieplan",
+    "plan.hint": "Dagelijkse distributieslots + dagelijkse tracking. De tellingen aan het einde van de dag zijn exact gelijk.",
+    "plan.day": "Dag",
+    "plan.used": "Gebruikt",
+    "plan.endTotal": "Eindtotaal",
+    "plan.each": "elk",
+    "plan.sectionSlots": "📦 Distributieslots",
+    "plan.sectionTracking": "📊 Dagelijkse tracking (Gebalanceerd aan het einde van elke dag)",
+    "plan.policy": "Beleidsbescherming: als een formulier voor de beginvoorraad leeg is, wordt er geen distributie uitgevoerd; alleen de vereisten per gereedschap worden getoond.",
+    "table.slot": "Slot",
+    "table.tool": "Gereedschap",
+    "table.amount": "Aantal",
+    "table.total": "TOTAAL",
+    "table.start": "Start",
+    "table.added": "Toegevoegd",
+    "table.remaining": "Resterend",
+    "table.target": "Doel",
+    "table.check": "Controle",
+    "table.noDist": "Geen distributie",
+    "err.invalid": "Ongeldig! Voer het formulier in om door te gaan.",
+    "msg.enter": "Voer de beginvoorraad in om de distributie uit te voeren.",
+    "msg.expansionReq": "Elk gereedschap vereist <b>{n} items</b> om het land te ontgrendelen.",
+    "msg.upgradeReq": "Elk gereedschap vereist <b>{n} items</b> om te upgraden vanaf capaciteit {cap}.",
+    "msg.generated": "Plan gegenereerd in {d} dag(en). Dagelijks gebalanceerd."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Bolzen",
+      "Brett",
+      "Klebeband"
+    ],
+    "silo": [
+      "Nagel",
+      "Schraube",
+      "Holzschindel"
+    ],
+    "expansion": [
+      "Landurkunde",
+      "Holzhammer",
+      "Markierungspfahl"
+    ]
+  },
+  "ui": {
+    "title": "Upgrade-Planer – Hay Day",  
+    "subtitle": "Plane und berechne die für dein nächstes Kapazitätsupgrade benötigten Gegenstände.",
+    "tabs.barn": "SCHEUNE",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "Landerweiterung",
+    "materials.title": "Materialien",
+    "materials.hint.barn": "Scheune: Bolzen, Brett, Klebeband.",
+    "materials.hint.silo": "Silo: Nagel, Schraube, Holzschindel.",
+    "materials.hint.expansion": "Landerweiterungen: Landurkunde, Holzhammer, Markierungspfahl.",
+    "materials.target": "Zielkapazität",
+    "materials.target_ph": "z.B. 1000 oder 1050",
+    "materials.targetTool": "Zielwerkzeug",
+    "materials.target_ph_exp": "z.B. 45",
+    "materials.initial": "Anfangsbestand:",
+    "materials.stock_ph": "Formular zur Verteilung eingeben",
+    "btn.calculate": "Berechnen",
+    "btn.clear": "Löschen",
+    "btn.clear_tip": "Alle Felder löschen",
+    "btn.preset": "Beispiel",
+    "btn.preset_tip": "Schnelles Beispiel",
+    "kpi.perTool": "Ziel pro Werkzeug:",
+    "kpi.balanced": "Ausgeglichen ✓",
+    "kpi.cap": "≤ 89/Tag ✓",
+    "plan.title": "Verteilungsplan",
+    "plan.hint": "Tägliche Verteilungs-Slots + tägliche Verfolgung. Die Zählung am Ende des Tages ist genau gleich.",
+    "plan.day": "Tag",
+    "plan.used": "Verwendet",
+    "plan.endTotal": "Endsumme",
+    "plan.each": "jeweils",
+    "plan.sectionSlots": "📦 Verteilungs-Slots",
+    "plan.sectionTracking": "📊 Tägliche Verfolgung (Am Ende jedes Tages ausgeglichen)",
+    "plan.policy": "Richtlinienschutz: Wenn ein Formular für den Anfangsbestand leer ist, wird keine Verteilung ausgeführt; nur die Anforderungen pro Werkzeug werden angezeigt.",
+    "table.slot": "Slot",
+    "table.tool": "Werkzeug",
+    "table.amount": "Menge",
+    "table.total": "GESAMT",
+    "table.start": "Start",
+    "table.added": "Hinzugefügt",
+    "table.remaining": "Verbleibend",
+    "table.target": "Ziel",
+    "table.check": "Prüfen",
+    "table.noDist": "Keine Verteilung",
+    "err.invalid": "Ungültig! Bitte das Formular zur Durchführung eingeben.",
+    "msg.enter": "Gib den Anfangsbestand ein, um die Verteilung durchzuführen.",
+    "msg.expansionReq": "Jedes Werkzeug benötigt <b>{n} Gegenstände</b>, um das Land freizuschalten.",
+    "msg.upgradeReq": "Jedes Werkzeug benötigt <b>{n} Gegenstände</b>, um von Kapazität {cap} aufzurüsten.",
+    "msg.generated": "Plan in {d} Tag(en) erstellt. Täglich ausgeglichen."
+  }
+}

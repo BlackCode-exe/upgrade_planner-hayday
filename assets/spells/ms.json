@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Bolt",
+      "Papan",
+      "Pita Pelekat"
+    ],
+    "silo": [
+      "Paku",
+      "Skru",
+      "Panel Kayu"
+    ],
+    "expansion": [
+      "Surat Ikatan Tanah",
+      "Penukul",
+      "Penanda Tanah"
+    ]
+  },
+  "ui": {
+    "title": "Perancang Naik Taraf - Hay Day",
+    "subtitle": "Rancang dan kira item yang diperlukan untuk naik taraf kapasiti anda yang seterusnya.",
+    "tabs.barn": "BANGSAL",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "PERLUASAN",
+    "materials.title": "Bahan",
+    "materials.hint.barn": "Bangsal: Bolt, Papan, Pita Pelekat.",
+    "materials.hint.silo": "Silo: Paku, Skru, Panel Kayu.",
+    "materials.hint.expansion": "Perluasan Ladang: Surat Ikatan Tanah, Penukul, Penanda Tanah.",
+    "materials.target": "Kapasiti Sasaran",
+    "materials.target_ph": "cth, 1000 atau 1050",
+    "materials.targetTool": "Alat sasaran",
+    "materials.target_ph_exp": "cth, 45",
+    "materials.initial": "Stok Awal:",
+    "materials.stock_ph": "masukkan borang untuk melaksanakan pengedaran",
+    "btn.calculate": "Kira",
+    "btn.clear": "Hapus",
+    "btn.clear_tip": "Hapus semua borang",
+    "btn.preset": "Contoh",
+    "btn.preset_tip": "Contoh cepat",
+    "kpi.perTool": "Sasaran setiap alat:",
+    "kpi.balanced": "Seimbang ✓",
+    "kpi.cap": "≤ 89/hari ✓",
+    "plan.title": "Pelan Pengedaran",
+    "plan.hint": "Slot pengedaran harian + penjejakan harian. Kiraan akhir hari adalah sama.",
+    "plan.day": "Hari",
+    "plan.used": "Digunakan",
+    "plan.endTotal": "Jumlah akhir",
+    "plan.each": "setiap",
+    "plan.sectionSlots": "📦 Slot Pengedaran",
+    "plan.sectionTracking": "📊 Penjejakan Harian (Seimbang pada akhir setiap hari)",
+    "plan.policy": "Perlindungan dasar: jika mana-mana borang stok awal kosong, tiada pengedaran dilaksanakan; hanya keperluan setiap alat ditunjukkan.",
+    "table.slot": "Slot",
+    "table.tool": "Alat",
+    "table.amount": "Jumlah",
+    "table.total": "JUMLAH",
+    "table.start": "Mula",
+    "table.added": "Ditambah",
+    "table.remaining": "Baki",
+    "table.target": "Sasaran",
+    "table.check": "Semak",
+    "table.noDist": "Tiada pengedaran",
+    "err.invalid": "Tidak sah! Sila masukkan borang untuk meneruskan.",
+    "msg.enter": "Masukkan stok awal untuk melaksanakan pengedaran.",
+    "msg.expansionReq": "Setiap alat memerlukan <b>{n} item</b> untuk membuka kunci tanah.",
+    "msg.upgradeReq": "Setiap alat memerlukan <b>{n} item</b> untuk menaik taraf dari kapasiti {cap}.",
+    "msg.generated": "Pelan dihasilkan dalam {d} hari. Seimbang setiap hari."
+  }
+}

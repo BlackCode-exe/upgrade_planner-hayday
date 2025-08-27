@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Boulon",
+      "Planche",
+      "Ruban adhésif"
+    ],
+    "silo": [
+      "Clou",
+      "Vis",
+      "Panneau en bois"
+    ],
+    "expansion": [
+      "Titre de propriété",
+      "Maillet",
+      "Piquet"
+    ]
+  },
+  "ui": {
+    "title": "Planificateur d’amélioration - Hay Day",
+    "subtitle": "Planifiez et calculez les articles nécessaires pour votre prochaine amélioration de capacité.",
+    "tabs.barn": "GRANGE",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "EXTENSION",
+    "materials.title": "Matériaux",
+    "materials.hint.barn": "Grange : Boulon, Planche, Ruban adhésif.",
+    "materials.hint.silo": "Silo : Clou, Vis, Panneau de bois.",
+    "materials.hint.expansion": "Extension de la ferme: Titre de propriété, Maillet, Piquet.",
+    "materials.target": "Capacité cible",
+    "materials.target_ph": "ex: 1000 ou 1050",
+    "materials.targetTool": "Outil cible",
+    "materials.target_ph_exp": "ex: 45",
+    "materials.initial": "Stock initial :",
+    "materials.stock_ph": "entrez le formulaire pour effectuer la distribution",
+    "btn.calculate": "Calculer",
+    "btn.clear": "Effacer",
+    "btn.clear_tip": "Effacer tous les champs",
+    "btn.preset": "Exemple",
+    "btn.preset_tip": "Exemple rapide",
+    "kpi.perTool": "Cible par outil :",
+    "kpi.balanced": "Équilibré ✓",
+    "kpi.cap": "≤ 89/jour ✓",
+    "plan.title": "Plan de distribution",
+    "plan.hint": "Emplacements de distribution quotidiens + suivi quotidien. Les totaux en fin de journée sont exactement égaux.",
+    "plan.day": "Jour",
+    "plan.used": "Utilisé",
+    "plan.endTotal": "Total final",
+    "plan.each": "chacun",
+    "plan.sectionSlots": "📦 Emplacements de distribution",
+    "plan.sectionTracking": "📊 Suivi quotidien (Équilibré à la fin de chaque journée)",
+    "plan.policy": "Règle de protection : si un formulaire de stock initial est vide, aucune distribution n'est exécutée ; seuls les besoins par outil sont affichés.",
+    "table.slot": "Emplacement",
+    "table.tool": "Outil",
+    "table.amount": "Montant",
+    "table.total": "TOTAL",
+    "table.start": "Début",
+    "table.added": "Ajouté",
+    "table.remaining": "Restant",
+    "table.target": "Cible",
+    "table.check": "Vérifier",
+    "table.noDist": "Pas de distribution",
+    "err.invalid": "Invalide ! Veuillez entrer le formulaire pour continuer.",
+    "msg.enter": "Entrez le stock initial pour effectuer la distribution.",
+    "msg.expansionReq": "Chaque outil nécessite <b>{n} objets</b> pour débloquer le terrain.",
+    "msg.upgradeReq": "Chaque outil nécessite <b>{n} objets</b> pour passer de la capacité {cap}.",
+    "msg.generated": "Plan généré en {d} jour(s). Équilibré quotidiennement."
+  }
+}

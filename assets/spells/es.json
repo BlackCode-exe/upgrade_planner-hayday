@@ -1,0 +1,68 @@
+{
+  "toolsets": {
+    "barn": [
+      "Perno",
+      "Tabla",
+      "Cinta adhesiva"
+    ],
+    "silo": [
+      "Clavo",
+      "Tornillo",
+      "Paneles de madera"
+    ],
+    "expansion": [
+      "Escritura de Tierras",
+      "Maza",
+      "Estaca de Para Marcar"
+    ]
+  },
+  "ui": {
+    "title": "Planificador de mejoras - Hay Day",
+    "subtitle": "Planifica y calcula los artículos necesarios para tu próxima mejora de capacidad.",
+    "tabs.barn": "GRANERO",
+    "tabs.silo": "SILO",
+    "tabs.expansion": "AMPLIACIÓN",
+    "materials.title": "Materiales",
+    "materials.hint.barn": "El Granero: Perno, Tabla, Cinta adhesiva.",
+    "materials.hint.silo": "El Silo: Clavo, Tornillo, Panel de madera.",
+    "materials.hint.expansion": "Zonas de ampliación: Escritura de tierras, Maza, Estaca de marcar.",
+    "materials.target": "Capacidad objetivo",
+    "materials.target_ph": "p. ej., 1000 o 1050",
+    "materials.targetTool": "Herramienta objetivo",
+    "materials.target_ph_exp": "p. ej., 45",
+    "materials.initial": "Existencias iniciales:",
+    "materials.stock_ph": "Ingrese el formulario para realizar la distribución.",
+    "btn.calculate": "Calcular",
+    "btn.clear": "Limpiar",
+    "btn.clear_tip": "Limpiar el formulario",
+    "btn.preset": "Ejemplo",
+    "btn.preset_tip": "Ejemplo rápido",
+    "kpi.perTool": "Objetivo por herramienta:",
+    "kpi.balanced": "Igual ✓",
+    "kpi.cap": "≤ 89/día ✓",
+    "plan.title": "Plan de Distribución",
+    "plan.hint": "Slots diarios y seguimiento. Los totales al final del día son iguales.",
+    "plan.day": "Día",
+    "plan.used": "Usado",
+    "plan.endTotal": "Total final",
+    "plan.each": "cada",
+    "plan.sectionSlots": "📦 Ranuras de distribución",
+    "plan.sectionTracking": "📊 Seguimiento diario (Equilibrado al final de cada día)",
+    "plan.policy": "Protección de política: si algún formulario de existencias iniciales está en blanco, no se ejecuta la distribución; solo se muestran los requisitos por herramienta.",
+    "table.slot": "Casilla",
+    "table.tool": "Herramienta",
+    "table.amount": "Cantidad",
+    "table.total": "TOTAL",
+    "table.start": "Inicio",
+    "table.added": "Añadido",
+    "table.remaining": "Restante",
+    "table.target": "Objetivo",
+    "table.check": "Verificación",
+    "table.noDist": "Sin distribución",
+    "err.invalid": "Inválido! Ingrese el formulario para continuar.",
+    "msg.enter": "Ingrese el stock inicial para ejecutar la distribución.",
+    "msg.expansionReq": "Cada herramienta requiere <b>{n} unidades</b> para desbloquear el tierra.",
+    "msg.upgradeReq": "Cada herramienta requiere <b>{n} unidades</b> para mejorar desde capacidad {cap}.",
+    "msg.generated": "Plan generado en {d} día(s). Balanceado diariamente."
+  }
+}
