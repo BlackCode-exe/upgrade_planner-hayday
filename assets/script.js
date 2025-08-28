@@ -85,15 +85,15 @@ function applyLang(code){
   const mt  = document.getElementById('materials-title'); if (mt) mt.textContent = pick('materials.title', mt.textContent);
   const hm  = document.getElementById('hint-mode');
   if (hm){
-    const hk = (window.mode==='barn') ? 'materials.hint.barn'
-             : (window.mode==='silo') ? 'materials.hint.silo'
+    const hk = (mode==='barn') ? 'materials.hint.barn'
+             : (mode==='silo') ? 'materials.hint.silo'
              : 'materials.hint.expansion';
     hm.textContent = pick(hk, hm.textContent);
   }
 
   const lblt = document.getElementById('lbl-target');
   const tgt  = document.getElementById('target');
-  if (window.mode === 'expansion'){
+  if (mode === 'expansion'){
     if (lblt) lblt.textContent = pick('materials.targetTool', lblt.textContent);
     if (tgt)  tgt.placeholder   = pick('materials.target_ph_exp', tgt.placeholder);
   } else {
@@ -101,7 +101,7 @@ function applyLang(code){
     if (tgt)  tgt.placeholder   = pick('materials.target_ph', tgt.placeholder);
   }
 
-  const [A,B,C] = getToolNames(window.mode || 'barn');
+  const [A,B,C] = getToolNames(mode || 'barn');
   const la = document.getElementById('lbl-a'); if (la) la.textContent = A;
   const lb = document.getElementById('lbl-b'); if (lb) lb.textContent = B;
   const lc = document.getElementById('lbl-c'); if (lc) lc.textContent = C;
@@ -156,7 +156,7 @@ async function setLang(code){
   applyLang(code);
 }
 
-/* Language Helper */
+// Return the current language code from storage or the browser
 function currentLangCode(){
   try {
     return localStorage.getItem('lang') || (navigator.language || 'en').slice(0,2);
@@ -306,9 +306,7 @@ function allProvided(){ return ![ids.a,ids.b,ids.c].some(id=>{const k=el(id); re
 /* ===== Mode switch  ===== */
 function setMode(newMode){
   mode = newMode;
-
-// Re-apply i18n (tab text, buttons, dsb)
-setTimeout(()=> applyLang(currentLangCode()), 0);
+  window.mode = mode;
 
   // Guarded tab state
   ["barn","silo","expansion"].forEach(m =>{
