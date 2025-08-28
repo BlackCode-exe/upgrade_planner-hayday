@@ -215,14 +215,27 @@ html.theme-dark .lang-select {
   .msg.err{color:var(--err)}
 
   /* ===== Table ===== */
-  table{width:100%; border-collapse:collapse; margin-top:10px}
-  th,td{border:1px solid var(--line); padding:10px; text-align:center}
-  table thead th {
+table {
+  width: auto;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+table thead th {
   background: var(--elev);
   color: var(--ink);
   font-weight: 800;
 }
-  table tfoot th {
+
+table tfoot th {
   background: var(--surface);
   color: var(--ink);
   font-weight: 800;
